@@ -1,11 +1,14 @@
 import fastify from "fastify";
+import cors from "@fastify/cors";
 import { PrismaClient } from "@prisma/client";
 
-const app = fastify({
-  logger: true,
+const app = fastify({ logger: true });
+
+app.register(cors, {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
 });
 const prisma = new PrismaClient();
-
 
 interface Task {
   id: string;
