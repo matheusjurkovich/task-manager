@@ -6,7 +6,7 @@ const app = fastify({ logger: true });
 
 app.register(cors, {
   origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PATCH", "DELETE"],
 });
 const prisma = new PrismaClient();
 
@@ -54,20 +54,20 @@ app.post<{ Body: Task }>("/tasks", async (request, reply) => {
       },
     });
     reply.status(201);
-    return reply.status(201).send(task.id);
+    return reply.status(201).send(task);
   } catch (error) {
     app.log.error(error);
     throw new Error("Erro ao criar tarefa");
   }
 });
 
-app.put<{ Body: Task; Params: TaskParams }>("/tasks/:id", async (request) => {
+app.patch<{ Body: Task; Params: TaskParams }>("/tasks/:id", async (request) => {
   try {
     const { id } = request.params;
-    const { completed } = request.body;
+    const { title, completed } = request.body;
     const task = await prisma.task.update({
       where: { id },
-      data: { completed },
+      data: { title, completed },
     });
     return task;
   } catch (error) {

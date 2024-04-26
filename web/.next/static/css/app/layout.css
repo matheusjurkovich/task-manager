@@ -483,6 +483,9 @@ video {
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 0 0% 98%;
 
+      --success: 120 40% 50%;
+      --success-foreground: 0 0% 98%;
+
       --border: 240 5.9% 90%;
       --input: 240 5.9% 90%;
       --ring: 240 10% 3.9%;
@@ -724,6 +727,9 @@ video {
 }
   .z-\[1\] {
   z-index: 1;
+}
+  .col-span-3 {
+  grid-column: span 3 / span 3;
 }
   .-mx-1 {
   margin-left: -0.25rem;
@@ -1007,6 +1013,9 @@ video {
   .list-none {
   list-style-type: none;
 }
+  .grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
   .flex-row {
   flex-direction: row;
 }
@@ -1158,6 +1167,9 @@ video {
   .border-primary\/50 {
   border-color: hsl(var(--primary) / 0.5);
 }
+  .border-success {
+  border-color: hsl(var(--success));
+}
   .border-transparent {
   border-color: transparent;
 }
@@ -1208,6 +1220,9 @@ video {
 }
   .bg-secondary {
   background-color: hsl(var(--secondary));
+}
+  .bg-success {
+  background-color: hsl(var(--success));
 }
   .bg-transparent {
   background-color: transparent;
@@ -1291,6 +1306,10 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+  .px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
   .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1335,6 +1354,9 @@ video {
 }
   .text-center {
   text-align: center;
+}
+  .text-right {
+  text-align: right;
 }
   .align-middle {
   vertical-align: middle;
@@ -1419,8 +1441,8 @@ video {
   .text-secondary-foreground {
   color: hsl(var(--secondary-foreground));
 }
-  .line-through {
-  text-decoration-line: line-through;
+  .text-success-foreground {
+  color: hsl(var(--success-foreground));
 }
   .underline-offset-4 {
   text-underline-offset: 4px;
@@ -1868,6 +1890,10 @@ video {
 
   .peer:disabled ~ .peer-disabled\:cursor-not-allowed {
   cursor: not-allowed;
+}
+
+  .peer:disabled ~ .peer-disabled\:line-through {
+  text-decoration-line: line-through;
 }
 
   .peer:disabled ~ .peer-disabled\:opacity-70 {
@@ -2329,6 +2355,10 @@ video {
 
   .sm\:mt-0 {
     margin-top: 0px;
+  }
+
+  .sm\:max-w-\[425px\] {
+    max-width: 425px;
   }
 
   .sm\:max-w-sm {
