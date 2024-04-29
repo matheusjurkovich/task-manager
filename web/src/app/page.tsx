@@ -177,15 +177,9 @@ export default function Component() {
                             updateTask(task.id, true);
                           }}
                           className="h-4 w-4"
-                          
                         />
 
-                        <label
-                          className="flex-1 text-sm"
-                          
-                        >
-                          {task.title}
-                        </label>
+                        <label className="flex-1 text-sm">{task.title}</label>
                         <Dialog>
                           <DialogTrigger asChild>
                             <Button size="sm" variant="ghost">

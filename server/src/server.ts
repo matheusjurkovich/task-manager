@@ -91,7 +91,7 @@ app.delete<{ Params: TaskParams }>("/tasks/:id", async (request) => {
 
 const start = async () => {
   try {
-    await app.listen(3333);
+    await app.listen(3333, 'jurkotask.up.railway.app');
     app.log.info("Servidor iniciado na porta 3333");
   } catch (error) {
     app.log.error(error);
