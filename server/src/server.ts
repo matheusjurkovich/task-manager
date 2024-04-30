@@ -20,6 +20,12 @@ interface TaskParams {
   id: string;
 }
 
+app.get("/", () => {
+  return {
+    hello: "world",
+  };
+});
+
 app.get("/tasks", async () => {
   try {
     const tasks = await prisma.task.findMany();
