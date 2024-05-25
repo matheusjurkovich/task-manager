@@ -21,7 +21,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 import { Pencil, PlusCircle, Trash } from "@phosphor-icons/react";
 
-import { api } from "@/API/api";
+import { api } from "@/lib/api/api";
 
 interface Task {
   id: string;
